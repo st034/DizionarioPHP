@@ -7,27 +7,21 @@ echo SEARCH($erase);
 
 function SEARCH($erase){
 	$inp = file_get_contents('dizio.json');
-	$tempArray = array(json_decode($inp,true));
-
-	foreach($tempArray as $x => $x_value){
-		if($erase == $x){return DELETEA($erase);}
-		else {return 'la parola non esiste';}
+	$tempArray = json_decode($inp,true);
+	$i=0;
+	if(isset($tempArray[$erase])==true){
+		DELETEA($erase);;
+	}else{echo "non esiste";}
 	}
-}
 	
 function DELETEA($erase){
 	$inp = file_get_contents('dizio.json');
-	$tempArray = array(json_decode($inp,true));
-	$i=0;
-	$inp = file_get_contents('dizio.json');
-	$tempArray = array(json_decode($inp,true));
-
-	foreach($tempArray as $x => $x_value){
-		if($erase == $x){
-			unset($tempArray[$x]);
-			$jsonData = json_encode($tempArray,JSON_OBJECT_AS_ARRAY);
-			file_put_contents('dizio.json', $jsonData);
-			return 'fatto!!';}
-		else {return 'ho un problema';}
-}}
+	$tempArray = json_decode($inp,true);
+	if(isset($tempArray[$erase])==true){
+		unset($tempArray[$erase]);
+		$x = json_encode($tempArray,true);
+		file_put_contents('dizio.json', $x);
+		echo "fatto!!!";
+	}
+	}
 ?>
