@@ -7,6 +7,9 @@ $addWord=filter_var($addWord,FILTER_SANITIZE_STRING);
 $sinonimo=filter_var($sinonimo,FILTER_SANITIZE_STRING);
 $contrario=filter_var($contrario,FILTER_SANITIZE_STRING);
 $submitAdd=filter_var($submitAdd,FILTER_SANITIZE_STRING);
+$addWord=strtolower($addWord);
+$sinonimo=strtolower($sinonimo);
+$contrario=strtolower($contrario);
 
 SEARCH($addWord,$sinonimo,$contrario);
 

@@ -3,7 +3,8 @@ $erase= $_GET['Erase'];
 $submitErase= $_GET['erase'];
 $erase=filter_var($erase,FILTER_SANITIZE_STRING);
 $submitErase=filter_var($submitErase,FILTER_SANITIZE_STRING);
-echo SEARCH($erase);
+$erase=strtolower($erase);
+SEARCH($erase);
 
 function SEARCH($erase){
 	$inp = file_get_contents('dizio.json');

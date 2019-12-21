@@ -3,6 +3,7 @@ $word= $_GET['word'];
 $submitcerca=$_GET['cerca'];
 $word=filter_var($word,FILTER_SANITIZE_STRING);
 $submitcerca=filter_var($submitcerca,FILTER_SANITIZE_STRING);
+$word=strtolower($word);
 SEARCH($word);
 
 
