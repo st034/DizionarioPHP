@@ -16,7 +16,7 @@ function SEARCH($word){
 		print_r($tempArray[$word]);
 	}else{echo "non esiste!!";}
 	}
-/*	
+	
 function DELETEA($word){
 	$inp = file_get_contents('dizio.json');
 	$tempArray = array(json_decode($inp,true));
@@ -31,7 +31,7 @@ function DELETEA($word){
 			file_put_contents('dizio.json', $jsonData);
 			return true;}
 		else {return false;}
-	}*/
+	}
 	
 }
 ?>
